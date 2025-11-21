@@ -1,4 +1,16 @@
+<<<<<<< HEAD
 import { Card, CardContent } from "@/components/ui/Card";
+import {
+  Bar,
+  BarChart,
+  CartesianGrid,
+  Legend,
+  ResponsiveContainer,
+  Tooltip,
+  XAxis,
+  YAxis,
+=======
+import { Card, CardContent } from "@/components/ui/card";
 import {
   ResponsiveContainer,
   BarChart,
@@ -8,6 +20,7 @@ import {
   Tooltip,
   CartesianGrid,
   Legend,
+>>>>>>> feature/dashboard-refactor
 } from "recharts";
 
 const stockData = [
@@ -29,7 +42,12 @@ export default function StockChart() {
   return (
     <div>
       <h2 className="text-xl font-semibold mb-4">Stock Report</h2>
+<<<<<<< HEAD
+      <Bar dataKey="stockIn" stackId="a" fill="#00c4ff" name="Stock In" />
+      <Bar dataKey="stockOut" stackId="a" fill="#753cd7" name="Stock Out" />
+=======
 
+>>>>>>> feature/dashboard-refactor
       <Card className="rounded-2xl shadow-sm">
         <CardContent className="p-4">
           <ResponsiveContainer width="100%" height={300}>
@@ -39,8 +57,11 @@ export default function StockChart() {
               <YAxis />
               <Tooltip />
               <Legend />
+<<<<<<< HEAD
+=======
               <Bar dataKey="stockIn" stackId="a" fill="#00c4ff" name="Stock In" />
               <Bar dataKey="stockOut" stackId="a" fill="#6c2bd9" name="Stock Out" />
+>>>>>>> feature/dashboard-refactor
             </BarChart>
           </ResponsiveContainer>
         </CardContent>
