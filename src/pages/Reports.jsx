@@ -10,7 +10,7 @@ import {
 import { Input } from "@/components/ui/Input";
 import { Button } from "@/components/ui/Button";
 import { Printer, Search } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card-item";
+import { Card, CardContent } from "@/components/ui/Card";
 import {
   BarChart,
   Bar,

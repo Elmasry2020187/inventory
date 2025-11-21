@@ -9,7 +9,7 @@ import {
 import { Input } from "@/components/ui/Input";
 import { Button } from "@/components/ui/Button";
 import { Plus, Search } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card-item"
+import { Card, CardContent } from "@/components/ui/Card"
 
 const suppliers = [
   { name: "Apple", email: "apple@gmail.com", contact: "+63 123 4243", logo: "/apple.png" },
