@@ -40,7 +40,7 @@ function SidebarLink({ to, label, icon }) {
         `flex items-center gap-2 px-3 py-2  
         ${
           isActive
-            ? "bg-primary text-primary-foreground font-bold rounded-lg"
+            ? "bg-primary text-primary-foreground font-bold rounded-md"
             : "text-gray-900 hover:bg-hover"
         }`
       }
