@@ -1,5 +1,5 @@
 import React from 'react'
-import Card from '../ui/card-item'
+import Card from '../ui/Card'
 
 const SummaryCard = ({ title, value }) => {
   return (
