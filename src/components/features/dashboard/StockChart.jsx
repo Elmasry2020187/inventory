@@ -30,7 +30,7 @@ export default function StockChart() {
     <div>
       <h2 className="text-xl font-semibold mb-4">Stock Report</h2>
       <Bar dataKey="stockIn" stackId="a" fill="#00c4ff" name="Stock In" />
-      <Bar dataKey="stockOut" stackId="a" fill="#6c2bd9" name="Stock Out" />
+      <Bar dataKey="stockOut" stackId="a" fill="#753cd7" name="Stock Out" />
       <Card className="rounded-2xl shadow-sm">
         <CardContent className="p-4">
           <ResponsiveContainer width="100%" height={300}>
