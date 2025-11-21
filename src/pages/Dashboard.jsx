@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardContent } from "@/components/ui/Card"
+import { Card, CardContent } from "@/components/ui/card";
 import { LineChart, CalendarDays, DollarSign, ShoppingBag } from "lucide-react";
 import {
   BarChart,
@@ -18,7 +18,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/Table";
+} from "@/components/ui/table";
 
 const stats = [
   {
@@ -91,79 +91,10 @@ const salesOrders = [
 
 export default function Dashboard() {
   return (
-    <div className="p-6 bg-[#f5f6fc] min-h-screen space-y-8">
-      <div>
-        <h2 className="text-xl font-semibold mb-4">Sales Summary</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {stats.map((stat, index) => (
-            <Card key={index} className="rounded-2xl shadow-sm">
-              <CardContent className="flex items-center space-x-4 p-4">
-                <div className={`p-3 rounded-full ${stat.bg}`}>
-                  {stat.icon}
-                </div>
-                <div>
-                  <p className="text-md font-semibold">{stat.value}</p>
-                  <p className="text-sm text-gray-500">{stat.label}</p>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </div>
-
-      <div>
-        <h2 className="text-xl font-semibold mb-4">Stock Report</h2>
-        <Card className="rounded-2xl shadow-sm">
-          <CardContent className="p-4">
-            <ResponsiveContainer width="100%" height={300}>
-              <BarChart data={stockData}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="month" />
-                <YAxis />
-                <Tooltip />
-                <Legend />
-                <Bar dataKey="stockIn" stackId="a" fill="#00c4ff" name="Stock In" />
-                <Bar dataKey="stockOut" stackId="a" fill="#6c2bd9" name="Stock Out" />
-              </BarChart>
-            </ResponsiveContainer>
-          </CardContent>
-        </Card>
-      </div>
-
-      <div>
-        <div className="flex items-center justify-between mb-4">
-          <h2 className="text-xl font-semibold">Sales Order</h2>
-          <button className="text-sky-500 font-medium text-sm">Last 7 Days ▾</button>
-        </div>
-        <Card className="rounded-2xl shadow-sm">
-          <CardContent className="p-0">
-            <Table>
-              <TableHeader className="bg-[#f1f2f7]">
-                <TableRow>
-                  <TableHead>Channel</TableHead>
-                  <TableHead>Draft</TableHead>
-                  <TableHead>Confirmed</TableHead>
-                  <TableHead>Packed</TableHead>
-                  <TableHead>Shipped</TableHead>
-                  <TableHead>Invoiced</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {salesOrders.map((row, idx) => (
-                  <TableRow key={idx}>
-                    <TableCell>{row.channel}</TableCell>
-                    <TableCell>{row.draft}</TableCell>
-                    <TableCell>{row.confirmed}</TableCell>
-                    <TableCell>{row.packed}</TableCell>
-                    <TableCell>{row.shipped}</TableCell>
-                    <TableCell>{row.invoiced}</TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </CardContent>
-        </Card>
-      </div>
+    <div className="p-6 bg-background min-h-screen space-y-8">
+      <StatsCards />
+      <StockChart />
+      <SalesOrdersTable />
     </div>
   );
 }
