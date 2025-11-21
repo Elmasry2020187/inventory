@@ -1,4 +1,4 @@
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card-item";
 import { LineChart, CalendarDays, DollarSign, ShoppingBag } from "lucide-react";
 
 const stats = [
