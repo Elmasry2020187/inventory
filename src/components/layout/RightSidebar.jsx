@@ -1,5 +1,5 @@
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card-item";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
 
 import { Separator } from "../ui/Separator";
 import CardActions from "../cards/CardActions";
