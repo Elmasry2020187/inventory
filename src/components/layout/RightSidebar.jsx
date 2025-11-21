@@ -1,30 +1,8 @@
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { FilePlus, Package, Truck, Upload } from "lucide-react";
-import { Button } from "../ui/button";
-import { Separator } from "../ui/separator";
 
-const Actions = [
-  {
-    id: 1,
-    title: "Create Order",
-    icon: <FilePlus size={18} />,
-    shortCut: "Ctrl + N",
-  },
-  {
-    id: 2,
-    title: "Add Product",
-    icon: <Package size={18} />,
-    shortCut: "Ctrl + P",
-  },
-  {
-    id: 3,
-    title: "Add Supplier",
-    icon: <Truck size={18} />,
-    shortCut: "Ctrl + K",
-  },
-  { id: 4, title: "Export", icon: <Upload size={18} />, shortCut: "Ctrl + S" },
-];
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
+import { Separator } from "../ui/separator";
+import CardActions from "../cards/CardActions";
 
 const items = [
   { name: "Macbook Pro" },
@@ -40,9 +18,9 @@ export default function RightSidebar() {
   return (
     <aside className="sticky top-12 bg-white border-l h-screen flex flex-col px-4 pt-5 space-y-6 ">
       <SidebarContainer cardTitle="Quick Actions">
-        <QuickActions />
+        <CardActions />
       </SidebarContainer>
-    <Separator/>
+      <Separator />
       <SidebarContainer cardTitle="Fast Moving Items">
         <FastMovingItems />
       </SidebarContainer>
@@ -61,34 +39,6 @@ function SidebarContainer({ cardTitle, children }) {
 
       <CardContent className="py-0 px-3">{children}</CardContent>
     </Card>
-  );
-}
-
-function QuickActions() {
-  return (
-    <div className="space-y-2">
-      {Actions.map((action) => (
-        <div
-          key={action.id}
-          className="flex items-center justify-between w-full"
-        >
-          <Button
-            variant="gost"
-            className="flex items-center gap-2 h-8 text-sm text-gray-700 font-medium hover:bg-gray-0 has-[>svg]:px-0 cursor-pointer"
-          >
-            {action.icon}
-            {action.title}
-          </Button>
-
-          <Badge
-            variant="outline"
-            className="border border-gray-300 text-gray-600 text-xs px-2 py-px rounded-md"
-          >
-            {action.shortCut}
-          </Badge>
-        </div>
-      ))}
-    </div>
   );
 }
 
