@@ -1,6 +1,6 @@
-import { Input } from "@/components/ui/Input"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/Avatar"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Search } from "lucide-react";
+import { Input } from "../ui/Input";
 
 export default function Navbar() {
   return (
