@@ -6,7 +6,7 @@ import {
   TableHead,
   TableBody,
   TableCell,
-} from "@/components/ui/table";
+} from "@/components/ui/Table";
 
 const salesOrders = [
   { channel: "Direct Sales", draft: 2, confirmed: 32, packed: 42, shipped: 23, invoiced: 7 },
