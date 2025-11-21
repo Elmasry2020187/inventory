@@ -1,56 +1,94 @@
+import {
+  BarChart,
+  Boxes,
+  HelpCircle,
+  Home,
+  Settings,
+  ShoppingCart,
+  Users,
+} from "lucide-react";
 import { NavLink } from "react-router";
-import { Home, Boxes, Users, ShoppingCart, BarChart, HelpCircle, Settings } from "lucide-react";
+
+// =====================
+// LINKS DATA
+// =====================
+
+const generalLinks = [
+  { to: "/", label: "Dashboard", icon: <Home size={18} /> },
+  { to: "/inventory", label: "Inventory", icon: <Boxes size={18} /> },
+  { to: "/sales-orders", label: "Sales Orders", icon: <ShoppingCart size={18} /> },
+  { to: "/suppliers", label: "Suppliers", icon: <Users size={18} /> },
+  { to: "/reports", label: "Reports", icon: <BarChart size={18} /> },
+];
+
+const supportLinks = [
+  { to: "/help", label: "Help", icon: <HelpCircle size={18} /> },
+  { to: "/settings", label: "Settings", icon: <Settings size={18} /> },
+];
+
+
+// =====================
+// REUSABLE LINK COMPONENT
+// =====================
+
+function SidebarLink({ to, label, icon }) {
+  return (
+    <NavLink
+      key={to}
+      to={to}
+      className={({ isActive }) =>
+        `flex items-center gap-2 px-3 py-2  
+        ${
+          isActive
+            ? "bg-primary text-primary-foreground font-bold rounded-lg"
+            : "text-gray-900 hover:bg-hover"
+        }`
+      }
+      onClick={() => window.scrollTo(0, 0)}
+    >
+      {icon}
+      {label}
+    </NavLink>
+  );
+}
+
+
+// =====================
+// SECTION COMPONENT
+// =====================
+
+function NavSection({ title, links }) {
+  return (
+    <nav className="flex-1 px-4 space-y-4">
+      <h4 className="text-xs text-gray-600 font-bold uppercase tracking-wider font-opensans py-2">
+        {title}
+      </h4>
+
+      {links.map((link) => (
+        <SidebarLink
+          key={link.to}
+          to={link.to}
+          label={link.label}
+          icon={link.icon}
+        />
+      ))}
+    </nav>
+  );
+}
+
+
+// =====================
+// MAIN SIDEBAR
+// =====================
 
 export default function Sidebar() {
-  const links = [
-    { to: "/", label: "Dashboard", icon: <Home size={18} /> },
-    { to: "/inventory", label: "Inventory", icon: <Boxes size={18} /> },
-    { to: "/sales-orders", label: "Sales Orders", icon: <ShoppingCart size={18} /> },
-    { to: "/suppliers", label: "Suppliers", icon: <Users size={18} /> },
-    { to: "/reports", label: "Reports", icon: <BarChart size={18} /> },
-  ];
-
-  const supportLinks = [
-    { to: "/help", label: "Help", icon: <HelpCircle size={18} /> },
-    { to: "/settings", label: "Settings", icon: <Settings size={18} /> },
-  ];
-
   return (
-    <aside className="pt-5  bg-white border-r flex flex-col h-screen">
+    <aside className="pt-8 px-4 bg-sidebar border-r flex flex-col h-screen">
 
-      <nav className="flex-1 px-4 space-y-2">
-        {links.map((link) => (
-          <NavLink
-            key={link.to}
-            to={link.to}
-            className={({ isActive }) =>
-              `flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium 
-              ${isActive ? "bg-blue-600 text-white" : "text-gray-600 hover:bg-gray-100"}`
-            }onClick={() => window.scrollTo(0, 0)}
-          >
-            {link.icon}
-            {link.label}
-          </NavLink>
-        ))}
+      <NavSection title="GENERAL" links={generalLinks} />
 
-        <div className="pt-6 text-xs text-gray-400 uppercase tracking-wider">
-          Support
-        </div>
+      <NavSection title="SUPPORT" links={supportLinks} />
 
-        {supportLinks.map((link) => (
-          <NavLink
-            key={link.to}
-            to={link.to}
-            className={({ isActive }) =>
-              `flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium 
-              ${isActive ? "bg-blue-600 text-white" : "text-gray-600 hover:bg-gray-100"}`
-            }
-          >
-            {link.icon}
-            {link.label}
-          </NavLink>
-        ))}
-      </nav>
     </aside>
   );
 }
