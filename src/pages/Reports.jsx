@@ -1,25 +1,16 @@
+import { Button } from "@/components/ui/Button";
+import { Card, CardContent } from "@/components/ui/Card";
+import { Printer } from "lucide-react";
 import React from "react";
 import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/Table";
-import { Input } from "@/components/ui/Input";
-import { Button } from "@/components/ui/Button";
-import { Printer, Search } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/Card";
-import {
-  BarChart,
   Bar,
-  XAxis,
-  YAxis,
-  Tooltip,
+  BarChart,
+  LabelList,
   Legend,
   ResponsiveContainer,
-  LabelList,
+  Tooltip,
+  XAxis,
+  YAxis,
 } from "recharts";
 
 const performance = [
