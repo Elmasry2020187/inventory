@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { Facebook, Twitter, Instagram } from "lucide-react";
+import { Facebook, Instagram, Twitter } from "lucide-react";
 import { Link, NavLink } from "react-router";
 
 const socialLinks = [

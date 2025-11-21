@@ -1,8 +1,8 @@
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
-import { Separator } from "../ui/Separator";
-import CardActions from "../cards/CardActions";
+import { Separator } from "../ui/separator";
+import CardActions from "../ui/CardActions";
 
 const items = [
   { name: "Macbook Pro" },

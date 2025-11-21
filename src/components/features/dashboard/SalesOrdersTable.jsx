@@ -1,4 +1,4 @@
-import { Card, CardContent } from "@/components/ui/Card";
+import { Card, CardContent } from "@/components/ui/card";
 import {
   Table,
   TableHeader,
@@ -6,7 +6,7 @@ import {
   TableHead,
   TableBody,
   TableCell,
-} from "@/components/ui/Table";
+} from "@/components/ui/table";
 
 const salesOrders = [
   { channel: "Direct Sales", draft: 2, confirmed: 32, packed: 42, shipped: 23, invoiced: 7 },
