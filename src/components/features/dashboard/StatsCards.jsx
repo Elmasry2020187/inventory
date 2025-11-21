@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import { Card, CardContent } from "@/components/ui/Card";
-=======
 import { Card, CardContent } from "@/components/ui/card";
->>>>>>> feature/dashboard-refactor
 import { LineChart, CalendarDays, DollarSign, ShoppingBag } from "lucide-react";
 
 const stats = [
