@@ -1,4 +1,4 @@
-import { Input } from "@/components/ui/input"
+import { Input } from "@/components/ui/Input"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/vatar"
 import { Search } from "lucide-react";
 

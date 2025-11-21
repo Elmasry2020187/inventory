@@ -1,7 +1,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card-item";
 
-import { Separator } from "../ui/separator";
+import { Separator } from "../ui/Separator";
 import CardActions from "../cards/CardActions";
 
 const items = [

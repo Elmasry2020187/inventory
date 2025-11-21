@@ -1,6 +1,6 @@
-import { Badge } from "@/components/ui/badge";
+import { Badge } from "@/components/ui/Badge";
 import { FilePlus, Package, Truck, Upload } from "lucide-react";
-import { Button } from "../ui/button";
+import { Button } from "../ui/Button";
 const Actions = [
   {
     id: 1,
